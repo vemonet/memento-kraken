@@ -21,15 +21,6 @@
       "memento": {
         "interval": ["2013-06-15T11:59:59Z", "2014-09-15T00:00:00Z"]
       }
-    },
-    "dbpedia": {
-      "title":       "DBpedia original",
-      "description": "DBpedia 2015 with an HDT back-end",
-      "type":        "HdtDatasource",
-      "settings":    {
-        "file": "/data/drugbank-5.1.1.hdt"
-      },
-      "timegate": true
     }
   },
 
@@ -37,7 +28,6 @@
     "baseURL": "/timegate/",
     "mementos": {
       "dbpedia": {
-        "originalBaseURL": "http://localhost:3000/dbpedia",
         "versions": [
           "dbpedia2015",
           "dbpedia2014"

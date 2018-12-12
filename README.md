@@ -6,12 +6,6 @@ https://github.com/LinkedDataFragments/Server.js/wiki/Deployment-as-Linux-servic
 
 LD archive DBpedia: http://fragments.mementodepot.org/
 
-### Issue RAISED
-
-https://github.com/LinkedDataFragments/Server.js/issues/87
-
-
-
 ### Convert to HDT
 
 ```shell
@@ -46,16 +40,12 @@ docker run -p 3000:3000 -t -i --rm -v /data/drugbank:/data -v /home/vemonet/sand
 * Query it:
 
 ```shell
-# Timegate not working atm
-curl -IL -H "Accept-Datetime: Wed, 15 Apr 2014 00:00:00 GMT" http://localhost:3000/timegate/http://data2services/model/go-category/process
+# Timegate working for us: 
+curl -IL -H "Accept-Datetime: Wed, 15 Apr 2013 00:00:00 GMT" http://localhost:3000/timegate/dbpedia?subject=http%3A%2F%2Fdata2services%2Fmodel%2Fgo-category%2Fprocess
+# Details in https://github.com/LinkedDataFragments/Server.js/issues/87
 
 
 # Working on dbpedia
 curl -IL -H "Accept-Datetime: Wed, 15 Apr 2013 00:00:00 GMT" http://dbpedia.mementodepot.org/timegate/http://dbpedia.org/page/English
-
-# It resolves by returning the result from
-http://dbpedia.mementodepot.org/memento/20110715000000/http://dbpedia.org/page/English
-#or 
-http://dbpedia.mementodepot.org/memento/20151001000000/http://dbpedia.org/page/English
 ```
 
