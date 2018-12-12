@@ -1,0 +1,62 @@
+{
+  "title": "Memento-aware server",
+
+  "datasources": {
+    "drugbank450": {
+      "title": "DrugBank 4.5.0",
+      "type": "HdtDatasource",
+      "settings": {
+        "file": "/data/drugbank-4.5.0.hdt"
+      },
+      "memento": {
+        "interval": ["2010-06-15T11:59:59Z", "2014-09-15T00:00:00Z"]
+      }
+    },
+    "drugbank511": {
+      "title": "DrugBank 5.1.1",
+      "type": "HdtDatasource",
+      "settings": {
+        "file": "/data/drugbank-5.1.1.hdt"
+      },
+      "memento": {
+        "interval": ["2014-09-14T11:59:59Z", "2018-04-15T00:00:00Z"]
+      }
+    },
+
+    "drugbank": {
+      "title": "DrugBank Original",
+      "type": "HdtDatasource",
+      "settings": {
+        "file": "/data/drugbank-5.1.1.hdt"
+      },
+      "timegate": true
+    }
+  },
+
+  "timegates": {
+    "baseURL": "/timegate/",
+    "mementos": {
+      "drugbank": {
+        "versions": [
+          "drugbank450",
+          "drugbank511"
+        ]
+      }
+    }
+  },
+
+  "prefixes": {
+    "rdf":         "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs":        "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd":         "http://www.w3.org/2001/XMLSchema#",
+    "dc":          "http://purl.org/dc/terms/",
+    "foaf":        "http://xmlns.com/foaf/0.1/",
+    "dbpedia":     "http://dbpedia.org/resource/",
+    "dbpedia-owl": "http://dbpedia.org/ontology/",
+    "dbpprop":     "http://dbpedia.org/property/",
+    "hydra":       "http://www.w3.org/ns/hydra/core#",
+    "void":        "http://rdfs.org/ns/void#",
+    "bl"  :        "http://w3id.org/biolink/vocab/",
+    "d2s" :        "http://data2services/vocab/"
+  }
+}
