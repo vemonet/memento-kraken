@@ -8,6 +8,16 @@ LD archive DBpedia: http://fragments.mementodepot.org/
 
 ### Convert to HDT
 
+* Using Docker: https://github.com/vemonet/rdf2hdt
+
+```shell
+docker run -it -v /data/data2services:/data rdf2hdt /data/input.nt /data/output.hdt
+```
+
+
+
+* Using Java: https://github.com/rdfhdt/hdt-java
+
 ```shell
 # Get the java executable and uncompress it
 wget https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/hdt-java/hdt-java-rc2.tgz
@@ -16,12 +26,13 @@ wget https://storage.googleapis.com/google-code-archive-downloads/v2/code.google
 ./rdf2hdt.sh /data/drugbank/drugbank-4.5.0.nt /data/drugbank/drugbank-4.5.0.hdt
 ./rdf2hdt.sh /data/drugbank/drugbank-5.1.1.nt /data/drugbank/drugbank-5.1.1.hdt
 
-
 # Docker build failing
 git clone https://github.com/rdfhdt/hdt-java
 docker build -t hdt-java .
 docker run -it -v /data/data2services:/data hdt-java -rdftype turtle /data/drugbank-5.1.1.ttl /data/drugbank-5.1.1.hdt
 ```
+
+
 
 
 
